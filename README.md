@@ -1,5 +1,5 @@
 # Analyzing Injuries in Professional Soccer Players
-##### MSDS Data Science Practicum By Andrea Fernandez
+##### MSDS Data Science Practicum Project By Andrea Fernandez
 
 ## Introduction
 Soccer players are known for falling and embellishing their injuries on the field, but they do actually obtain injuries! My project focuses on injuries that occur in professional soccer players that play in Europe. I wanted to focus on Europe because these teams were ending their season and have been playing for months on end. The purpose of this project was to better understand what factors affect players and their injuries, like their age or the position that they play. Another goal was to try and predict how long a player might be injured and unable to play based on the various factors. This information can be useful to a variety of staff on the teams by implementing injury prevention programs and also make adjustments to future line-ups. 
