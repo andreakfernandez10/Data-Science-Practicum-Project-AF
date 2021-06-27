@@ -2,7 +2,7 @@
 ##### MSDS Data Science Practicum By Andrea Fernandez
 
 ## Introduction
-Soccer players are known for falling and embellishing their injuries on the field but, they do actually obtain injuries sometimes. My project focuses on injuries that occur in professional soccer players that play in Europe. I wanted to focus on Europe because these teams were ending their season and have been playing for months on end. The purpose of this project was to better understand what factors effect players and their injuries, like their age or the position that they play. Another goal was to try and predict how long a player might be injured and unable to play based on the various factors. This information can be useful to a variety of staff on the teams by implementing injury prevention programs and also make adjustments to future line-ups. 
+Soccer players are known for falling and embellishing their injuries on the field, but they do actually obtain injuries! My project focuses on injuries that occur in professional soccer players that play in Europe. I wanted to focus on Europe because these teams were ending their season and have been playing for months on end. The purpose of this project was to better understand what factors affect players and their injuries, like their age or the position that they play. Another goal was to try and predict how long a player might be injured and unable to play based on the various factors. This information can be useful to a variety of staff on the teams by implementing injury prevention programs and also make adjustments to future line-ups. 
 
 ## Data 
 I collected all of the data myself from mostly betting websites that update player injuries multiple times a day. When searching for datasets, I came up short for soccer injuries. Since there was a definite lack of data on this subject I decided to collect it and compile it all of myself and use it for my project. Although the information from different sources was not very detailed, I was able to add a couple variables specific to the players. I collected data on Premier League in the UK, La Liga in Spain, and Bundesliga in Germany. The Premier League and La Liga consists of 20 teams, while Bundesliga has 18. The reason I chose these three leagues is because I could find similar data on them, whereas a league in Italy barely updated their injuries. It is also important to note that Premier League was the only league that provided 3 other variables that the other leagues did not. 
@@ -24,7 +24,7 @@ I collected all of the data myself from mostly betting websites that update play
 #### 13. Details- Any information given from the team abou the injury 
 
 ## Data Cleaning
-Since I compiled the dataset entirely, I knew there was not a lot of data cleaning that needed to be done. My dataset was on the smaller side so I couldn't omit any of the rows or columns that had errors so I made sure to fix any typos or date errors that occurred before getting further into my project. The main Injury dataset with all leagues did not contain any missing values, but the Premier League dataset did have 77 missing values. I decided to fix this issues by replacing the NA's with another character to prevent any issues.
+Since I compiled the dataset entirely, I knew there was not a lot of data cleaning that needed to be done. My dataset was on the smaller side so I couldn't omit any of the rows or columns that had errors so I made sure to fix any typos or date errors that occurred before getting further into my project. The main "Injury" dataset with all leagues did not contain any missing values, but the Premier League dataset did have 77 missing values. I decided to fix this issues by replacing the NA's with another character to prevent any issues.
 <p align="center">
 <img width="405" alt="Screen Shot 2021-06-25 at 8 18 35 PM" src="https://user-images.githubusercontent.com/60277706/123522381-26308400-d67a-11eb-8b6e-6b40d65848b6.png">
 </p>
@@ -39,7 +39,7 @@ Since I compiled the dataset entirely, I knew there was not a lot of data cleani
 <p/>
 
 ## Exploratory Data Analysis
-Some of the more important exploratory commands I used was producing the frequency for all of the character variables. This function gave a lot of insight into which injuries happen the most along with the team and leagues effected. We can also see that Defender is the most injured position and two of the Premier League teams have the largest number of injuries. The number of reoccurring injuries is almost the same as new injuries, which was suprising to see. We can also see that Premier League has the most injured players with Bundesliga second, although they have the least amount of teams. 
+Some of the more important exploratory commands I used was producing the frequency for all of the character variables. This function gave a lot of insight into which injuries happen the most along with the team and leagues affected. We can also see that Defender is the most injured position and two of the Premier League teams have the largest number of injuries. The number of reoccurring injuries is almost the same as new injuries, which was suprising to see. We can also see that Premier League has the most injured players with Bundesliga second, although they have the least amount of teams. 
 
 <p align="center">
 <img width="671" alt="Screen Shot 2021-06-26 at 2 59 36 PM" src="https://user-images.githubusercontent.com/60277706/123525603-2be49480-d68f-11eb-89d9-eae9440c0b85.png">
@@ -56,7 +56,7 @@ The goal for making these models was to accurately predict how long players will
 </p>
 
 ## Evaluate Model
-I first evaluated the training data with both models, which was the larger of the two datasets split. Then the testing data was run with both models and they produced the predicted values, true values, and which model it was. The next step I took was measure how each of the models performed on both the training and testing datasets. Below we can see the results of how the root mean square error(rmse) for the random forest was lower, which means it performed better than the linear regression model for the training data. The rmse was lower for the linear regression model and peformed better when run on the testing data. Since the random forest was not performing as well as it should be, I decided to use resampling on the training data. This is to get a better estimate on how the model will likely perform if there was new data put into the model.
+I first evaluated the training data with both models, which was the larger of the two datasets split. Then the testing data was run with both models and they produced the predicted values, true values, and which model it was. The next step I took was to measure how each of the models performed on both the training and testing datasets. Below we can see the results of how the root mean square error(rmse) for the random forest was lower, which means it performed better than the linear regression model for the training data. The rmse was lower for the linear regression model and peformed better when run on the testing data. Since the random forest was not performing as well as it should be, I decided to use resampling on the training data. This is to get a better estimate on how the model will likely perform if there was new data put into the model.
 
 <p align="center">
  <img width="579" alt="Screen Shot 2021-06-26 at 4 34 59 PM" src="https://user-images.githubusercontent.com/60277706/123527408-846e5e80-d69c-11eb-9d94-6daac61d552a.png"> 
@@ -78,14 +78,14 @@ The second random forest model is made by creating folds instead of splitting th
 </p>
 
 ## Text Mining
-I wanted to do text mining for the Premier League data set since the teams provided a qucik detailed explination of the players injury. A lot of the details were direct quotes, which meant that the details were too different to categorize. I took the Details variable and ran a text mining analysis to produce a word cloud of the most frequent words to see if there was a common theme in the injuries. It appears that being able to play for the rest of the season was mainly talked about and anoth one that stood out was surgery. I explore this further in Tableau and visualization section. 
+I wanted to do text mining for the Premier League dataset because the teams provided a qucik detailed explination of the players injury. A lot of the details were direct quotes, which meant that the details were too different to categorize. I took the Details variable and ran a text mining analysis to produce a word cloud of the most frequent words to see if there was a common theme in the injuries. It appears that being able to play for the rest of the season was mainly talked about and another interesting one that stood out to me was surgery. I explore this further in Tableau and visualization section. 
 
 ![image](https://user-images.githubusercontent.com/60277706/123505342-b5f31580-d61b-11eb-9e68-0811011a1b74.png)
 
 
 ## Visualizations
-I used Tableau to create visualizations to go deeper into the data and understand how injuries effect players and teams. I will link the Tableau Public page so you can interact with the visualizations and see all of the details by hovering over the data points.
-- This first visualization shows two different graphs. The first graph shows how close the reoccurring injuries in quantity. The second shows the injuries that occur the most for each position played. We can see that the knee has the most injuries for every position played on the field. 
+I used Tableau to create visualizations to go deeper into the data and understand how injuries affect players and teams. I will link the Tableau Public page so you can interact with the visualizations and see all of the details by hovering over the data points.
+- This first visualization shows two different graphs. The first graph shows how close the reoccurring injuries in quantity. The second shows the injuries that occur the most for each position played. We can see that the knee has the most injuries for every position played on the field, even the goal keeper. 
 ![image](https://user-images.githubusercontent.com/60277706/123529426-50e80000-d6ad-11eb-99a5-0f843f59a0a3.png)
 
 - This visualization has two separte line graphs. The plot on the top left shows the relationship between the age of the player and the total days they were injured. We can see that the total days increase with age. The bottom left graph shows the relationship of the total number of injuries and the age of the players. We can see the peak in injuries at the same age as the previous graph. Players in their late twenties and towards the end of their careers are the most injured for the longest amount of time as well.
@@ -95,6 +95,7 @@ I used Tableau to create visualizations to go deeper into the data and understan
 ![image](https://user-images.githubusercontent.com/60277706/123529535-63af0480-d6ae-11eb-9cac-bbe9d7f625b1.png)
 
 ## Conclusion
-
+From this analysis we can conclude injuries affect players differently based on their age and what position that they play. Knee injuries are the most frequent injury for all positions and is also the injury that amounts to the most days being injuried and also surgery. This conclusion demonstates the necessisty of injury prevention for these players, especially players that are in their late twenties. The peak in injuries for palyers 28-29 is very high and shows that players should not be treated the same as the 16 year olds on the team. Implementation of injury prevention or extra precautions could prolong a players career and keep them on the field. This is reason enough to stratify players based on their position and their age, and this possibly could be broadened to whether or not this injury has occurred before since these injuries affect players throughout their careers once they happen. 
+Based on the models created, teams could use this information to properly determine how long a player could be injured based on their issue or body area affected. The models could accurately predict the number of days that an injury prevents an player from returning to play, which could help managers plan and strategize. This is important especially towards the end of the season because teams are playing in up to 3 different championships and are in the final stages of the season. 
 
 
