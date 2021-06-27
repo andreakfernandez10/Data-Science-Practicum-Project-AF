@@ -38,6 +38,7 @@ Since I compiled the dataset entirely, I knew there was not a lot of data cleani
 <img width="212" alt="Screen Shot 2021-06-25 at 8 25 12 PM" src="https://user-images.githubusercontent.com/60277706/123522478-bec70400-d67a-11eb-9b60-f35ccc9dc0da.png">
 <p/>
 
+
 ## Exploratory Data Analysis
 Some of the more important exploratory commands I used was producing the frequency for all of the character variables. This function gave a lot of insight into which injuries happen the most along with the team and leagues affected. We can also see that Defender is the most injured position and two of the Premier League teams have the largest number of injuries. The number of reoccurring injuries is almost the same as new injuries, which was suprising to see. We can also see that Premier League has the most injured players with Bundesliga second, although they have the least amount of teams. 
 
@@ -48,6 +49,7 @@ Some of the more important exploratory commands I used was producing the frequen
 <img width="666" alt="Screen Shot 2021-06-26 at 3 01 03 PM" src="https://user-images.githubusercontent.com/60277706/123525631-6b12e580-d68f-11eb-9d25-f286d41474c0.png">
 <img width="695" alt="Screen Shot 2021-06-26 at 3 25 27 PM" src="https://user-images.githubusercontent.com/60277706/123526087-c72b3900-d692-11eb-9cec-0673b9bb8631.png">
 </p> 
+
 ## Building The Models
 The goal for making these models was to accurately predict how long players will be injured and unable to play based on which injury they possessed and their injury type and their age. I used two different model types and ran them together to see which one predicted the total days of injury better. I split the data based on whether or not it was a reoccurring injury or not since it was almost even number in the data. Once the data was split, I made training and testing data in order to run through the model. The first model I created was a linear regression model with the data frame of Date of Injury, Age, Total Days, Reoccurring Injury. The linear model was set up to predict the total days based on the rest of the variables in the data frame. The next model was a random forest with regression purposes just like the linear model. Once all of the models were built, I was able to train them and test the results.
 <p align="center">
