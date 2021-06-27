@@ -99,3 +99,7 @@ From this analysis we can conclude injuries affect players differently based on 
 Based on the models created, teams could use this information to properly determine how long a player could be injured based on their issue or body area affected. The models could accurately predict the number of days that an injury prevents an player from returning to play, which could help managers plan and strategize. This is important especially towards the end of the season because teams are playing in up to 3 different championships and are in the final stages of the season. 
 
 
+Tableau Public links:
+https://public.tableau.com/views/Book1_16242452340340/Dashboard1?:language=en-US&:display_count=n&:origin=viz_share_link
+https://public.tableau.com/views/Book2_16246852451720/Dashboard3?:language=en-US&:display_count=n&:origin=viz_share_link
+https://public.tableau.com/views/Book3_16246869882230/Dashboard2?:language=en-US&:display_count=n&:origin=viz_share_link
