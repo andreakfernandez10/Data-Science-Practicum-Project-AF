@@ -45,11 +45,9 @@ Some of the more important exploratory commands I used was producing the frequen
 <img width="671" alt="Screen Shot 2021-06-26 at 2 59 36 PM" src="https://user-images.githubusercontent.com/60277706/123525603-2be49480-d68f-11eb-89d9-eae9440c0b85.png">
 <img width="673" alt="Screen Shot 2021-06-26 at 3 00 21 PM" src="https://user-images.githubusercontent.com/60277706/123525620-59314280-d68f-11eb-8361-78a882191326.png">
 <img width="669" alt="Screen Shot 2021-06-26 at 3 00 44 PM" src="https://user-images.githubusercontent.com/60277706/123525624-63534100-d68f-11eb-98bc-80331f2bdb16.png">
-<img width="677" alt="Screen Shot 2021-06-26 at 3 00 52 PM" src="https://user-images.githubusercontent.com/60277706/123525629-66e6c800-d68f-11eb-9519-0342cae7e756.png">
 <img width="666" alt="Screen Shot 2021-06-26 at 3 01 03 PM" src="https://user-images.githubusercontent.com/60277706/123525631-6b12e580-d68f-11eb-9d25-f286d41474c0.png">
 <img width="695" alt="Screen Shot 2021-06-26 at 3 25 27 PM" src="https://user-images.githubusercontent.com/60277706/123526087-c72b3900-d692-11eb-9cec-0673b9bb8631.png">
-</p>
-
+</p> 
 ## Building The Models
 The goal for making these models was to accurately predict how long players will be injured and unable to play based on which injury they possessed and their injury type and their age. I used two different model types and ran them together to see which one predicted the total days of injury better. I split the data based on whether or not it was a reoccurring injury or not since it was almost even number in the data. Once the data was split, I made training and testing data in order to run through the model. The first model I created was a linear regression model with the data frame of Date of Injury, Age, Total Days, Reoccurring Injury. The linear model was set up to predict the total days based on the rest of the variables in the data frame. The next model was a random forest with regression purposes just like the linear model. Once all of the models were built, I was able to train them and test the results.
 <p align="center">
@@ -58,7 +56,7 @@ The goal for making these models was to accurately predict how long players will
 </p>
 
 ## Evaluate Model
-I first evaluated the training data with both models, which was the larger of the two datasets split. Then the testing data was run with both models and they produced the predicted values, true values, and which model it was. The next step I took was measure how each of the models performed on both the training and testing datasets. Below we can see the results of how the root mean square error(rmse) for the random forest was lower, which means it performed better than the linear regression model for the training data. The rmse was lower for the linear regression model and peformed better when run on the testing data.
+I first evaluated the training data with both models, which was the larger of the two datasets split. Then the testing data was run with both models and they produced the predicted values, true values, and which model it was. The next step I took was measure how each of the models performed on both the training and testing datasets. Below we can see the results of how the root mean square error(rmse) for the random forest was lower, which means it performed better than the linear regression model for the training data. The rmse was lower for the linear regression model and peformed better when run on the testing data. Since the random forest was not performing as well as it should be, I decided to use resampling on the training data. This is to get a better estimate on how the model will likely perform if there was new data put into the model.
 
 <p align="center">
  <img width="579" alt="Screen Shot 2021-06-26 at 4 34 59 PM" src="https://user-images.githubusercontent.com/60277706/123527408-846e5e80-d69c-11eb-9d94-6daac61d552a.png"> 
@@ -70,6 +68,33 @@ I first evaluated the training data with both models, which was the larger of th
 <img width="705" alt="Screen Shot 2021-06-26 at 4 27 19 PM" src="https://user-images.githubusercontent.com/60277706/123527288-753ae100-d69b-11eb-9756-6b2f7033bc9d.png">
 </p>
 
+## Try Random Forest Again
+The second random forest model is made by creating folds instead of splitting the data like before, but still using Reoccurring Injuries as the divisive property. What this does is fit a model to the first 9 folds and then evaluate the models on the 10th and last fold, until it goes through the whole training set. After we run this model we were able to produce the same results as the linear model, which means it is a better random forest model than the inital one.
+<p align="center">
+<img width="584" alt="Screen Shot 2021-06-26 at 6 17 00 PM" src="https://user-images.githubusercontent.com/60277706/123529142-d3bb8b80-d6aa-11eb-8660-973b06e38f5b.png">
+</p>
+<p align="center">
+<img width="691" alt="Screen Shot 2021-06-26 at 6 32 28 PM" src="https://user-images.githubusercontent.com/60277706/123529386-e636c480-d6ac-11eb-81e0-c15c9712cc23.png">
+</p>
+
+## Text Mining
+I wanted to do text mining for the Premier League data set since the teams provided a qucik detailed explination of the players injury. A lot of the details were direct quotes, which meant that the details were too different to categorize. I took the Details variable and ran a text mining analysis to produce a word cloud of the most frequent words to see if there was a common theme in the injuries. It appears that being able to play for the rest of the season was mainly talked about and anoth one that stood out was surgery. I explore this further in Tableau and visualization section. 
+
 ![image](https://user-images.githubusercontent.com/60277706/123505342-b5f31580-d61b-11eb-9e68-0811011a1b74.png)
+
+
+## Visualizations
+I used Tableau to create visualizations to go deeper into the data and understand how injuries effect players and teams. I will link the Tableau Public page so you can interact with the visualizations and see all of the details by hovering over the data points.
+- This first visualization shows two different graphs. The first graph shows how close the reoccurring injuries in quantity. The second shows the injuries that occur the most for each position played. We can see that the knee has the most injuries for every position played on the field. 
+![image](https://user-images.githubusercontent.com/60277706/123529426-50e80000-d6ad-11eb-99a5-0f843f59a0a3.png)
+
+- This visualization has two separte line graphs. The plot on the top left shows the relationship between the age of the player and the total days they were injured. We can see that the total days increase with age. The bottom left graph shows the relationship of the total number of injuries and the age of the players. We can see the peak in injuries at the same age as the previous graph. Players in their late twenties and towards the end of their careers are the most injured for the longest amount of time as well.
+![image](https://user-images.githubusercontent.com/60277706/123529489-dec3eb00-d6ad-11eb-9557-9ffb7e2e2faa.png)
+
+- This last visualization focuses on the specific injuries that occur and injuries that lead players to be out for the season. The left bar graph is filtered to show which injuries lead players to either have surgery or to be out for the season completely, or both. We can see the knee is by far the most problematic and serious injury for players. The left visual is filtered to show the injuries that occur the most in the dataset and how they compare in size. 
+![image](https://user-images.githubusercontent.com/60277706/123529535-63af0480-d6ae-11eb-9cac-bbe9d7f625b1.png)
+
+## Conclusion
+
 
 
